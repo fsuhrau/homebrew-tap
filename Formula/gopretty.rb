@@ -10,7 +10,7 @@ class Gopretty < Formula
   end
 
   def caveats
-    "xcodebuild -project 'testproject.xcodeproj' -configuration Release -target "test" | gopretty"
+    "xcodebuild -project 'testproject.xcodeproj' -configuration Release -target \"test\" | gopretty"
   end
 
   test do
