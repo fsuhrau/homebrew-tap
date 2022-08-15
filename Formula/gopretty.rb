@@ -5,13 +5,21 @@
 class Gopretty < Formula
   desc "Go Pretty a small beautifier for XCode builds similar to xcpretty"
   homepage "https://github.com/fsuhrau/gopretty"
-  version "0.2.0"
+  version "0.2.1"
   depends_on :macos
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/fsuhrau/gopretty/releases/download/v0.2.1/gopretty_0.2.1_darwin_arm64.tar.gz"
+      sha256 "4eb789923d1f6f348a131e8d60501f02eee418d818a09f9ef5612b418e57e251"
+
+      def install
+        bin.install "gopretty"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/fsuhrau/gopretty/releases/download/v0.2.0/gopretty_0.2.0_darwin_amd64.tar.gz"
-      sha256 "9ac6c84ed4db2df17676ed86d6a3d48572e84a03073f5e29fa1caf978a5b4236"
+      url "https://github.com/fsuhrau/gopretty/releases/download/v0.2.1/gopretty_0.2.1_darwin_amd64.tar.gz"
+      sha256 "f4b2f4468b12fd964786ee67a3c95c00f692ce18793abfa29ae1cadd8ac446d8"
 
       def install
         bin.install "gopretty"
