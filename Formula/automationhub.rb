@@ -7,8 +7,8 @@ class Automationhub < Formula
   homepage "https://github.com/fsuhrau/automationhub"
   version "0.1.2"
 
-  depends_on "android-sdk"
-  depends_on "android-platform-tools"
+  depends_on cask: "android-sdk"
+  depends_on cask: "android-platform-tools"
   depends_on :macos
 
   on_macos do
