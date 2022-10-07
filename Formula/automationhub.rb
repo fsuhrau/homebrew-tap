@@ -11,7 +11,7 @@ class Automationhub < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/fsuhrau/automationhub/releases/download/v0.1.2/automationhub_0.1.2_darwin_arm64.tar.gz"
-      sha256 "759d425e3eb021ba3ab3506dab48766b12df514ac6624b46d7f64e8313168107"
+      sha256 "e3ce87493e1ef972dcc46261075d73aa26cc1504f1305a6bf7820e723271d4c0"
 
       def install
         bin.install "hub"
@@ -20,7 +20,7 @@ class Automationhub < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/fsuhrau/automationhub/releases/download/v0.1.2/automationhub_0.1.2_darwin_amd64.tar.gz"
-      sha256 "0f4934bc0b5f2ff291098d00e493dd8b5ce9a23214bd2545c729a0b4030b3173"
+      sha256 "05cdb147c43530ebb840959da5b414fb445688a0536d1d04b58778a83b2ee784"
 
       def install
         bin.install "hub"
