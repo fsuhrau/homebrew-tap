@@ -5,30 +5,29 @@
 class Gopretty < Formula
   desc "Go Pretty a small beautifier for XCode builds similar to xcpretty"
   homepage "https://github.com/fsuhrau/gopretty"
-  version "0.2.1"
+  version "1.0.0"
   depends_on :macos
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/fsuhrau/gopretty/releases/download/v0.2.1/gopretty_0.2.1_darwin_arm64.tar.gz"
-      sha256 "4eb789923d1f6f348a131e8d60501f02eee418d818a09f9ef5612b418e57e251"
+  if Hardware::CPU.intel?
+    url "https://github.com/fsuhrau/gopretty/releases/download/v1.0.0/gopretty_1.0.0_darwin_amd64.tar.gz"
+    sha256 "00a2d1d7c60474dfe2de5a7bb5bd2093eea51be026b43d9e1e98bf44d079fa82"
 
-      def install
-        bin.install "gopretty"
-      end
+    def install
+      bin.install "gopretty"
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/fsuhrau/gopretty/releases/download/v0.2.1/gopretty_0.2.1_darwin_amd64.tar.gz"
-      sha256 "f4b2f4468b12fd964786ee67a3c95c00f692ce18793abfa29ae1cadd8ac446d8"
+  end
+  if Hardware::CPU.arm?
+    url "https://github.com/fsuhrau/gopretty/releases/download/v1.0.0/gopretty_1.0.0_darwin_arm64.tar.gz"
+    sha256 "cf1b1b5a4909627c8f3ec5dfd8795a121c388735b40c3e9fab4a0a5f25de5765"
 
-      def install
-        bin.install "gopretty"
-      end
+    def install
+      bin.install "gopretty"
     end
   end
 
-  def caveats; <<~EOS
-    xcodebuild -project 'testproject.xcodeproj' -configuration Release -target "test" | gopretty
-  EOS
+  def caveats
+    <<~EOS
+      xcodebuild -project 'testproject.xcodeproj' -configuration Release -target "test" | gopretty
+    EOS
   end
 end
