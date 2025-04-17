@@ -5,26 +5,50 @@
 class Automationhub < Formula
   desc "Automation Environment to run Unity3D PlayMode tests on real devices for android support install adb and aapt: brew install --cask android-sdk brew install --cask android-platform-tools"
   homepage "https://github.com/fsuhrau/automationhub"
-  version "0.1.2"
-  depends_on :macos
+  version "1.0.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/fsuhrau/automationhub/releases/download/v0.1.2/automationhub_0.1.2_darwin_arm64.tar.gz"
-      sha256 "73524a018358822d93e3ac59f6f2f3e3d9e7ead9b887c5f45e019ec54876bfc9"
+    if Hardware::CPU.intel?
+      url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.0/automationhub_1.0.0_darwin_amd64.tar.gz"
+      sha256 "3e117c0245fed458c62c797a0893327943f50410f43f4004db6396c310117998"
 
       def install
         bin.install "hub"
         bin.install "hubcli"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/fsuhrau/automationhub/releases/download/v0.1.2/automationhub_0.1.2_darwin_amd64.tar.gz"
-      sha256 "0203e609f7446252e98a2ebd68fbbe605c0456f1d877d6ebda247880fa49f0cc"
+    if Hardware::CPU.arm?
+      url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.0/automationhub_1.0.0_darwin_arm64.tar.gz"
+      sha256 "2200df218ada2f405d97972bbe30872da40cadafa5d058e934b6f9f6f30ec24e"
 
       def install
         bin.install "hub"
         bin.install "hubcli"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.0/automationhub_1.0.0_linux_amd64.tar.gz"
+        sha256 "f3ed0346367f27f3aa3bcaefd75a1d564465fd6f19dde4a730d2a725d2d14dcd"
+
+        def install
+          bin.install "hub"
+          bin.install "hubcli"
+        end
+      end
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.0/automationhub_1.0.0_linux_arm64.tar.gz"
+        sha256 "71a89ea24db06e06f8b03b24894cfba2999eeb62cce301952356a9251acdd73f"
+
+        def install
+          bin.install "hub"
+          bin.install "hubcli"
+        end
       end
     end
   end
