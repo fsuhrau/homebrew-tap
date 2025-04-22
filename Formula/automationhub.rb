@@ -5,12 +5,12 @@
 class Automationhub < Formula
   desc "Automation Environment to run Unity3D PlayMode tests on real devices for android support install adb and aapt: brew install --cask android-commandlinetools"
   homepage "https://github.com/fsuhrau/automationhub"
-  version "1.0.2"
+  version "1.0.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.2/automationhub_1.0.2_darwin_amd64.tar.gz"
-      sha256 "438e442fb4b84d94d1e4c57f20d51aa24742b7ccc1933d33889792955092eb7b"
+      url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.3/automationhub_1.0.3_darwin_amd64.tar.gz"
+      sha256 "4f8f9034589823f5fcacc503d6db223366fbb7f8ab2357463ca4d2ab7894b126"
 
       def install
         bin.install "hub"
@@ -18,8 +18,8 @@ class Automationhub < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.2/automationhub_1.0.2_darwin_arm64.tar.gz"
-      sha256 "f38ff51f8667432e0ab14f9b48a95db6e897ae5232a8efd08f59a11bbf9d9b55"
+      url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.3/automationhub_1.0.3_darwin_arm64.tar.gz"
+      sha256 "cfeeacf25c1c81404d21da8741de92129f996fd58620f66794b387644a3528a5"
 
       def install
         bin.install "hub"
@@ -31,8 +31,8 @@ class Automationhub < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.2/automationhub_1.0.2_linux_amd64.tar.gz"
-        sha256 "252cd5de9997443d2d03a52a010f31823d1aebf21d62652ba34f27ca0e3802a8"
+        url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.3/automationhub_1.0.3_linux_amd64.tar.gz"
+        sha256 "9d571fb2df6382d573d0a681edf9ef08cfa450ee2f758bab2ee9c02c2e67f4cd"
 
         def install
           bin.install "hub"
@@ -42,8 +42,8 @@ class Automationhub < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.2/automationhub_1.0.2_linux_arm64.tar.gz"
-        sha256 "9b870ec03b65f9f0a79db94acf43d58300cb1bf187697178ab8cbccb486e78f0"
+        url "https://github.com/fsuhrau/automationhub/releases/download/v1.0.3/automationhub_1.0.3_linux_arm64.tar.gz"
+        sha256 "8e70605c0a9a21d57e54a785dd2bcad71108d1fe691d39ba89da300b939f68b5"
 
         def install
           bin.install "hub"
