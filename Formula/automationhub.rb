@@ -5,12 +5,12 @@
 class Automationhub < Formula
   desc "Automation Environment to run Unity3D PlayMode tests on real devices for android support install adb and aapt: brew install --cask android-commandlinetools"
   homepage "https://github.com/fsuhrau/automationhub"
-  version "1.1.0"
+  version "1.2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fsuhrau/automationhub/releases/download/v1.1.0/automationhub_1.1.0_darwin_amd64.tar.gz"
-      sha256 "3f699866ef70e3875e32dff9de855253e998824237a07254fd7577f0bf741198"
+      url "https://github.com/fsuhrau/automationhub/releases/download/v1.2.0/automationhub_1.2.0_darwin_amd64.tar.gz"
+      sha256 "db89121701aad81387bc5dc2e9f250505e2c479937f668947ad48cdc974f574b"
 
       define_method(:install) do
         bin.install "hub"
@@ -18,8 +18,8 @@ class Automationhub < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fsuhrau/automationhub/releases/download/v1.1.0/automationhub_1.1.0_darwin_arm64.tar.gz"
-      sha256 "e865cc7102899152b967c712bdb97716061597ab2ae1ff15907c191ada8c1847"
+      url "https://github.com/fsuhrau/automationhub/releases/download/v1.2.0/automationhub_1.2.0_darwin_arm64.tar.gz"
+      sha256 "3a736e9f593ab28e642785c7b54d2052c1edb6c6f796e632bfff4f3fc0773f1f"
 
       define_method(:install) do
         bin.install "hub"
@@ -30,16 +30,16 @@ class Automationhub < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fsuhrau/automationhub/releases/download/v1.1.0/automationhub_1.1.0_linux_amd64.tar.gz"
-      sha256 "761e6bfd3f328af78af9c1b34bbdd95f83d4b1ab556421217c4c81f610994ccd"
+      url "https://github.com/fsuhrau/automationhub/releases/download/v1.2.0/automationhub_1.2.0_linux_amd64.tar.gz"
+      sha256 "f92b716a667c14b1b2bddd160d4cff709a22a5eec96b42951be2a5c25bac83fb"
       define_method(:install) do
         bin.install "hub"
         bin.install "hubcli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fsuhrau/automationhub/releases/download/v1.1.0/automationhub_1.1.0_linux_arm64.tar.gz"
-      sha256 "4978db9b0625ca9e08c3c066aa3e456ab1f95626cbbf0736c14a9759c72a3901"
+      url "https://github.com/fsuhrau/automationhub/releases/download/v1.2.0/automationhub_1.2.0_linux_arm64.tar.gz"
+      sha256 "61f6ec966e32b2ed0081e25eef4e917a3d061e66f1375ccd3c6127e24b9f8e4a"
       define_method(:install) do
         bin.install "hub"
         bin.install "hubcli"
